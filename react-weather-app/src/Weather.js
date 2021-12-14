@@ -27,7 +27,7 @@ export default function Weather () {
                     <ul>
                         <li>Precipitation : 25%</li>
                         <li>Humidity : 35%</li>
-                        <li>Wind: 3 km/h</li>
+                        <li>Wind: 5 km/h</li>
                     </ul>
                 </div>
             </div>
