@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import FriendlyDate from "./FriendlyDate"
 
 export default function Weather () {
     const [loaded, setLoaded] = useState(false);
@@ -13,7 +14,7 @@ export default function Weather () {
             city: response.data.name,
             humidity: response.data.main.humidity,
             description: response.data.weather[0].description,
-            date: "Saturday 23:24",
+            date: new Date(response.data.dt * 1000),
             iconUrl: "https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png"
             
         });
@@ -36,7 +37,7 @@ export default function Weather () {
              </div>
                 <h1>Nigeria</h1>
                 <ul className="date">
-                    <li>{weatherData.date}</li>
+                    <li><FriendlyDate date={weatherData.date} /></li>
                     <li>{weatherData.description}</li>
                 </ul>
                 <div className="row">
