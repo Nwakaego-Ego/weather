@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
-import FriendlyDate from "./FriendlyDate"
 
-export default function Weather () {
+import WeatherInfo from "./WeatherInfo";
+
+export default function Weather (props) {
     const [loaded, setLoaded] = useState(false);
     const [weatherData, setWeatherData] = useState({});
     
@@ -35,28 +36,7 @@ export default function Weather () {
                     <button className="btn btn-danger w-100 p-2">Search</button>
                 </div>
              </div>
-                <h1>Nigeria</h1>
-                <ul className="date">
-                    <li><FriendlyDate date={weatherData.date} /></li>
-                    <li>{weatherData.description}</li>
-                </ul>
-                <div className="row">
-                    <div className="col-6">
-                        <img 
-                            src={weatherData.iconUrl}
-                           alt={weatherData.description} /> 
-                             <span className="degree">{Math.round(weatherData.temperature)}</span> 
-                            <span className="farenheit">°F</span>
-                    </div>
-                    <div className="col-6">
-                        <ul>
-                            <li>Precipitation : 25%</li>
-                            <li>Humidity : {weatherData.humidity}%</li>
-                            <li>Wind: {weatherData.wind} km/h</li>
-                        </ul>
-                    </div>
-                </div>
-            
+             <WeatherInfo data={weatherData}/>
             </div>
         ); 
     } else {
