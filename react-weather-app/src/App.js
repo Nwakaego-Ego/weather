@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-      <Weather/>
+      <Weather defaultCity="Nigeria"/>
       <footer>
         This project was created by Nwakaego Glory Nwaekpe and it is {""}
       <a href='https://github.com/Nwakaego-Ego/weather'>Open Sourced </a>
